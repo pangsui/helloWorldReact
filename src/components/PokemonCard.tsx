@@ -1,10 +1,9 @@
-export default function PokemonCard() {
-  //   const pokemon = pokemonList[0].name;
-  //   const img = pokemonList[0].imgSrc;
+export default function PokemonCard({ pokemonList }) {
+  console.log(pokemonList);
   return (
     <div>
       {pokemonList.map((pokemon) => (
-        <Item name={pokemon.name} img={pokemon.imgSrc} />
+        <Item name={pokemon.name} img={pokemon.imgSrc} key={pokemon.name} />
       ))}
     </div>
   );
@@ -14,19 +13,8 @@ function Item({ name, img }) {
     <div>
       <figure>
         {img ? <img src={img} alt={name} /> : <p>???</p>}
-
         <figcaption>{name}</figcaption>
       </figure>
     </div>
   );
 }
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
