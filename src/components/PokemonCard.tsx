@@ -1,14 +1,8 @@
-export default function PokemonCard({ pokemonList }) {
-  console.log(pokemonList);
-  return (
-    <div>
-      {pokemonList.map((pokemon) => (
-        <Item name={pokemon.name} img={pokemon.imgSrc} key={pokemon.name} />
-      ))}
-    </div>
-  );
+interface PokemonProp {
+  img: string;
+  name: string;
 }
-function Item({ name, img }) {
+function PokemonCard({ img, name }: PokemonProp) {
   return (
     <div>
       <figure>
@@ -18,3 +12,4 @@ function Item({ name, img }) {
     </div>
   );
 }
+export default PokemonCard;
