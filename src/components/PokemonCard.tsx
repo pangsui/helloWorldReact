@@ -1,13 +1,20 @@
 interface PokemonProp {
-  img: string;
+  imgSrc?: string;
   name: string;
 }
-function PokemonCard({ img, name }: PokemonProp) {
+interface AppProp {
+  pokemonListArr: PokemonProp;
+}
+function PokemonCard({ pokemonListArr }: AppProp) {
   return (
     <div>
       <figure>
-        {img ? <img src={img} alt={name} /> : <p>???</p>}
-        <figcaption>{name}</figcaption>
+        {pokemonListArr.imgSrc ? (
+          <img src={pokemonListArr.imgSrc} alt={pokemonListArr.name} />
+        ) : (
+          <p className="no-image">???</p>
+        )}
+        <figcaption className="pokeman-name">{pokemonListArr.name}</figcaption>
       </figure>
     </div>
   );
