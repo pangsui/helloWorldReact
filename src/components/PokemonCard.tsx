@@ -1,25 +1,20 @@
 export default function PokemonCard() {
-  //   const pokemon = pokemonList[0].name;
-  //   const img = pokemonList[0].imgSrc;
-  return (
-    <div>
-      {pokemonList.map((pokemon) => (
-        <Item name={pokemon.name} img={pokemon.imgSrc} />
-      ))}
-    </div>
-  );
-}
-function Item({ name, img }) {
+  const pokemon = pokemonList[1];
   return (
     <div>
       <figure>
-        {img ? <img src={img} alt={name} /> : <p>???</p>}
+        {pokemon.imgSrc ? (
+          <img src={pokemon.imgSrc} alt={pokemon.name} />
+        ) : (
+          <p>???</p>
+        )}
 
-        <figcaption>{name}</figcaption>
+        <figcaption>{pokemon.name}</figcaption>
       </figure>
     </div>
   );
 }
+
 const pokemonList = [
   {
     name: "bulbasaur",
