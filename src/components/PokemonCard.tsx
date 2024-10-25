@@ -1,19 +1,14 @@
-export default function PokemonCard({ pokemonList }) {
-  console.log(pokemonList);
-  return (
-    <div>
-      {pokemonList.map((pokemon) => (
-        <Item name={pokemon.name} img={pokemon.imgSrc} key={pokemon.name} />
-      ))}
-    </div>
-  );
-}
-function Item({ name, img }) {
+export default function PokemonCard({ pokemon }) {
   return (
     <div>
       <figure>
-        {img ? <img src={img} alt={name} /> : <p>???</p>}
-        <figcaption>{name}</figcaption>
+        {pokemon.imgSrc ? (
+          <img src={pokemon.imgSrc} alt={pokemon.name} />
+        ) : (
+          <p>???</p>
+        )}
+
+        <figcaption>{pokemon.name}</figcaption>
       </figure>
     </div>
   );
